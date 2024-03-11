@@ -105,7 +105,11 @@
                             <div class=" col-md-4 col-sm-6">
                                 <div class="single-explore-item">
                                     <div class="single-explore-img">
-                                        <img src="assets/images/explore/e1.jpg" alt="explore image">
+										@if (str_ends_with($item->picture, 'storage'))
+											<img src="{{ $item->picture }}/pictures/placeholder.jpg" alt="explore image">
+										@else
+											<img src="{{ $item->picture }}" alt="explore image">
+										@endif
                                         <div class="single-explore-img-info">
                                             <button style="width: fit-content; padding: 0 4px">Founded Recently</button>
                                             <div class="single-explore-image-icon-box">
@@ -113,7 +117,7 @@
                                         </div>
                                     </div>
                                     <div class="single-explore-txt bg-theme-1">
-                                        <h2><a href="#">{{ $item->title  }}</a></h2>
+                                        <h2><a href="{{ route('show', $item->id) }}">{{ $item->title  }}</a></h2>
                                         <p class="explore-rating-price">
                                             <span class="explore-rating" style="padding: 0 3px; width:fit-content">{{ (new DateTime($item->when_at))->format('H:i') }}</span>
                                             <a href="#">{{ (new DateTime($item->when_at))->format('Y-m-d')  }}</a> 
@@ -126,7 +130,7 @@
                                                 <div class="col-sm-2">
                                                     <div class="explore-person-img">
                                                         <a href="#">
-                                                            <img src="assets/images/explore/person.png" alt="explore person">
+                                                            <img src="storage/pictures/man-placeholder.jpg" alt="explore person">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -151,6 +155,12 @@
                             </div>
                     @empty
                         
+						<div class="col-md-12 text-center">
+							<div class="alert alert-warning" role="alert">
+								No items found
+							</div>
+						</div>
+
                     @endforelse
 					</div>
                     

@@ -82,12 +82,12 @@
 			            <!-- Collect the nav links, forms, and other content for toggling -->
 			            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 			                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-			                    <li class=" scroll active"><a href="/">home</a></li>
-			                    <li class="scroll"><a href="#works">how it works</a></li>
-			                    <li class="scroll"><a href="#explore">explore</a></li>
-			                    <li class="scroll"><a href="#reviews">review</a></li>
-			                    <li class="scroll"><a href="#blog">blog</a></li>
-			                    <li class="scroll"><a href="#contact">contact</a></li>
+								<li class="scroll {{ request()->is('/') ? 'active' : '' }}"><a href="#home" onclick="window.location.href = '/#home'" >home</a></li>
+			                    <li class="scroll"><a href="#" onclick="window.location.href = '/#works'" >how it works</a></li>
+								<li class="scroll {{ request()->is('create') ? 'active' : '' }}"><a href="#" onclick="window.location.href = '{{ route('create') }}'">create</a></li>
+			                    <li class="scroll"><a href="#reviews" onclick="window.location.href = '/#review'">review</a></li>
+			                    <li class="scroll"><a href="#blog" onclick="window.location.href = '/#blog'">blog</a></li>
+			                    <li class="scroll"><a href="#contact" onclick="window.location.href = '/#contact'">contact</a></li>
 			                </ul><!--/.nav -->
 			            </div><!-- /.navbar-collapse -->
 			        </div><!--/.container-->
@@ -241,12 +241,11 @@
 			           	</div>
 			           	<div class="col-sm-9">
 			           		<ul class="footer-menu-item">
-			                    <li class="scroll"><a href="#works">how it works</a></li>
-			                    <li class="scroll"><a href="#explore">explore</a></li>
-			                    <li class="scroll"><a href="#reviews">review</a></li>
-			                    <li class="scroll"><a href="#blog">blog</a></li>
-			                    <li class="scroll"><a href="#contact">contact</a></li>
-			                    <li class=" scroll"><a href="#contact">my account</a></li>
+			                    <li class="scroll"><a href="#works" onclick="window.location.href = '/#works'" >how it works</a></li>
+			                    <li class="scroll"><a href="#explore" onclick="window.location.href = '/#explore'" >explore</a></li>
+			                    <li class="scroll"><a href="#reviews" onclick="window.location.href = '/#reviews'" >review</a></li>
+			                    <li class="scroll"><a href="#blog" onclick="window.location.href = '/#blog'" >blog</a></li>
+			                    <li class="scroll"><a href="#contact" onclick="window.location.href = '/#contact'" >contact</a></li>
 			                </ul><!--/.nav -->
 			           	</div>
 		           </div>

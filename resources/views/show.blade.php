@@ -652,7 +652,11 @@
             <div class="col-md-5 col-sm-12 col-xs-12">
                 <div class="product-image">
 					<div class="item active">
-						<img src="https://www.bootdey.com/image/700x400/FFB6C1/000000" class="img-responsive" alt="" />
+                        @if (str_ends_with($item->picture, 'storage'))
+                            <img src="{{ $item->picture }}/pictures/placeholder.jpg" class="img-responsive" alt="">
+                        @else
+                            <img src="{{ $item->picture }}" class="img-responsive" alt="">
+                        @endif
 					</div>
                 </div>
             </div>
