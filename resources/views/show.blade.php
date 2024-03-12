@@ -251,7 +251,7 @@
 }
 
 .profile-message ul {
-  list-style: none ;  
+  list-style: none ;
 }
 
 .product-deatil .certified {
@@ -573,7 +573,7 @@
 }
 
 .profile-message ul {
-  list-style: none ;  
+  list-style: none ;
 }
 
 .product-deatil .certified {
@@ -721,7 +721,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12">
                         <div class="btn-group pull-right">
-                            <button class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Finder</button>
+                            <button onclick="window.location.href = '{{ route('contact', $item->id) }}' " class="btn btn-white btn-default"><i class="fa fa-envelope"></i> Contact Finder</button>
                         </div>
                     </div>
                 </div>

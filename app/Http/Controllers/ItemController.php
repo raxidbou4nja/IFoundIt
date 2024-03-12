@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Request as RequestItem;
+use Illuminate\Support\Str;
 
 class ItemController extends Controller
 {
@@ -54,5 +56,9 @@ class ItemController extends Controller
         $item->save();
         return redirect('/create?created=success');
     }
+
+
+
+
 
 }
