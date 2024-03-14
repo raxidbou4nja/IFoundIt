@@ -32,7 +32,7 @@ form {
 
 @if (isset($_GET['created']) && $_GET['created'] == 'success')
     <div class="alert alert-success" role="alert">
-        Item Added successfully!
+        Item Added successfully!. you can contact with the owner using this link: <a href="{{ route('indexChatWithOwner', $_GET['code']) }}">Chat now</a>
     </div>
 @endif
 
@@ -77,12 +77,12 @@ form {
 
     <div class="form-group">
         <label for="picture">Picture</label>
-        <input type="file" class="form-control" id="picture" name="picture" required>
+        <input type="file" class="form-control" id="picture" name="picture">
     </div>
 
     <div class="form-group">
         <label for="finder">Finder</label>
-        <input type="text" class="form-control" id="finder" name="finder" required placeholder="Enter finder">
+        <input type="text" class="form-control" id="finder" name="finder" placeholder="Enter finder">
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>

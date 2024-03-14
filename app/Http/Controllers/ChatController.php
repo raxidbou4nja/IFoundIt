@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Request as RequestItem;
 use App\Models\Chat;
-
+use App\Models\Item;
 class ChatController extends Controller
 {
     public function show($reference)
@@ -21,6 +21,37 @@ class ChatController extends Controller
         return view('chat.index', compact('messages','last_messages'));
     }
     
+    public function showOwnerContact($reference)
+    {
+        $item = Item::where('reference', $reference)->firstOrFail();
+
+        $requests = RequestItem::where('item_id', $item->id)->with('chat')->get();
+        
+        // groupe last messages by request_id
+        $last_messages = $requests->map(function($item) {
+            return $item->chat->last();
+        });
+
+        // if last_messages is empty send empty array
+        return view('chat.index-owner', compact('requests', 'last_messages'));
+    }
+
+    public function showOwnerContactMessages($reference, $request_id)
+    {
+        $item = Item::where('reference', $reference)->firstOrFail();
+
+        $requests = RequestItem::where('reference', $request_id)->with('chat')->get();
+
+        // groupe last messages by request_id
+        $last_messages = $requests->map(function($item) {
+            return $item->chat->last();
+        });
+
+        // if last_messages is empty send empty array
+        return view('chat.index-owner', compact('requests', 'last_messages'));
+    }
+
+
 
     // send message
     public function sendToFinder(Request $request, $reference)

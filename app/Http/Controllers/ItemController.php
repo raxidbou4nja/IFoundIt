@@ -11,8 +11,20 @@ class ItemController extends Controller
 {
     public function index()
     {
-        $items = Item::paginate(100);
+        $items = Item::paginate(10);
         return view('index', compact('items'));
+    }
+
+
+    public function search()
+    {
+        $what = request('what');
+        $where = request('where');
+
+        $items = Item::where('title', 'like', '%'.$what.'%')
+            ->where('city', 'like', '%'.$where.'%')
+            ->paginate(10);
+        return view('search', compact('items'));
     }
 
     public function show($id)
@@ -43,6 +55,7 @@ class ItemController extends Controller
         $item->city = strip_tags($request->city);
         $item->address = strip_tags($request->address);
         $item->when_at = strip_tags($request->when_at);
+        $item->reference = Str::random(10);
         
         if ($request->hasFile('picture')) {
             
@@ -54,7 +67,7 @@ class ItemController extends Controller
         }
 
         $item->save();
-        return redirect('/create?created=success');
+        return redirect('/create?created=success&code='.$item->reference);
     }
 
 
