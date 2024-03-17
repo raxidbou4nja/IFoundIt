@@ -21,7 +21,7 @@ To run I Found It locally, follow these steps:
 8. Start the development server using `php artisan serve`.
 
 ### Usage:
-- Visit the deployed site [I Found It](https://www.ifoundit.com).
+- Visit the deployed site [I Found It](https://ifoundit.rb4.tech).
 - Browse lost and found items.
 - Click on an item to view detailed information.
 - Report a lost or found item using the "Add New Item" feature.
@@ -37,7 +37,6 @@ Contributions are welcome! If you'd like to contribute to I Found It, please fol
 6. Create a new Pull Request.
 
 ### Related Projects:
-- [Lost & Found Tracker](https://github.com/example/lost-found-tracker) - A similar project for tracking lost and found items.
 
 ### Licensing:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
