@@ -3,11 +3,11 @@
 ### Introduction:
 I Found It is a web platform built using Laravel framework, designed to simplify the process of reporting and finding lost items. Inspired by personal experiences of misplacing belongings, the goal of I Found It is to foster community support and helpfulness by providing a centralized hub for individuals to report lost items and others to search for and return them.
 
-**Deployed Site:** [I Found It](https://www.ifoundit.com)
+**Deployed Site:** [I Found It](https://ifoundit.rb4.tech)
 
-**Final Project Blog Article:** [Bringing Lost and Found Online: The Journey of I Found It](https://www.ifoundit.com/blog)
+**Final Project Blog Article:** [Empowering Communities: The Journey of Building I Found It](https://medium.com/@rachid.boughnja/empowering-communities-the-journey-of-building-i-found-it-3f29fdd00d10)
 
-**Author(s) LinkedIn:** [John Doe](https://www.linkedin.com/in/johndoe)
+**Author(s) LinkedIn:** [rachid boughnja](https://www.linkedin.com/in/rachid-boughnja-59021a233/)
 
 ### Installation:
 To run I Found It locally, follow these steps:
